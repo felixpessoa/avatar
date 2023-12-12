@@ -1,0 +1,67 @@
+07:50
+	Criando seu Avatar com Inteligência Artificial Generativa utilizando Java e Microsserviços
+--------------------------------------------------------------------------------------------
+	Planejamento do Escopo
+*Problema:
+	Usuários têm dificuldade em encontrar uma imagem personalizada que
+representa sua identidade em aplicativos que requerem fotos de perfil
+
+----------------------------------------------------------------------------------------------
+	Proposta de Solução:
+*Quarkus Microservice Avatar:
+	Microserviço para geração de imagens de perfil integrado com API de inteligencia artificial.	
+
+*Generative AI Stable Diffusion
+	Inteligência artificial generativa modelo de difusão predefinida.
+
+----------------------------------------------------------------------------------------------
+	Ferramentas:
+*Docker
+*Java
+*JDK
+*Quarkus
+*Hibernate
+*Testcontainers
+*MariaDB
+*LocalStack (simulação de serviços em nuvem no ambiente de desenvolvimento local)
+*Amazon S3
+----------------------------------------------------------------------------------------------
+	Preparação do Ambiente e Configuração
+*debian
+	(docker run -it --rm debian:latest) --criar imagem debian
+		(apt-get update && apt-get install curl zip unzip -y) atualizar e instalar o zip e unzip
+
+*SDKMAN java17
+	(curl -s "https://get.sdkman.io" | bash)
+		(source "/root/.sdkman/bin/sdkman-init.sh")
+			(sdk list java)
+				(sdk install java 17.0.7-tem) --instalar o java 17
+					(sdk use java 17.0.7-tem) --para usar o java desejado
+						(java --version) -- confirmar a versão do java instalado.
+							(env | grep JAVA_HOME) verifica a variavel de ambiente
+				 
+*GraalVm 22
+	(sdk list java)
+		(sdk install java 22.3.2.r17-grl)
+			(sdk use java 22.3.2.r17-grl)
+				(java --version) -- confirmar a versão do java instalado.
+						(env | grep JAVA_HOME) verifica a variavel de ambiente
+							(export JAVA_HOME=/root/.sdkman/candidates/java/22.3.2.r17-grl)
+								(env | grep GRAALVM_HOME)
+									(export GRAALVM_HOME=/root/.sdkman/candidates/java/22.3.2.r17-grl)
+*Native Image
+	(gu install native-image) --plugin adicional do graalVm
+
+*Quarkus
+	(sdk list quarkus)
+		(sdk install quarkus 3.0.3.Final)
+			(which quarkus)
+				(quarkus --version)
+				
+----------------------------------------------------------------------------------------------
+	CRIANDO PROJETO
+
+*quarkus create app me.dio:avatar --no-code
+	(quarkus extension add 'quarkus-resteasy-reactive-jackson')
+		
+
