@@ -14,6 +14,7 @@ public class CustomerQuery {
         this.ids = ids;
     }
 
+    // Padrao de projeto Builder Pattern
     public static class Builder {
         private Optional<Set<String>> ids = Optional.empty();
 

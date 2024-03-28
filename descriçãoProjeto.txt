@@ -1,4 +1,4 @@
-07:50
+
 	Criando seu Avatar com Inteligência Artificial Generativa utilizando Java e Microsserviços
 --------------------------------------------------------------------------------------------
 	Planejamento do Escopo
@@ -63,5 +63,16 @@ representa sua identidade em aplicativos que requerem fotos de perfil
 
 *quarkus create app me.dio:avatar --no-code
 	(quarkus extension add 'quarkus-resteasy-reactive-jackson')
+
+
+----------------------------------------------------------------------------------------------
+DOCKER
+	docker build -f src/main/docker/Dockerfile.jvm -t dio/avatar:jvm .
+	docker build -f src/main/docker/Dockerfile.native -t dio/avatar:native .
+		(comparar os tamanhos)
+			docker images | grep dio
+MVN
+	./mvnw clean package -Pnative
+
 		
 

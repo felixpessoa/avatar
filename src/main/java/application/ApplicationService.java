@@ -10,6 +10,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class ApplicationService {
+
     private final CustomerReadService customerReadService;
     private final ProfilePhotoCreateService profilePhotoCreateService;
 
