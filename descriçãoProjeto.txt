@@ -82,11 +82,19 @@ Add extension
 	(S3)
 	quarkus extension add 'amazon-s3'
 	add junto no POM
-<dependency>
-	<groupId>software.amazon.awssdk</groupId>
-	<artifactId>netty-nio-client</artifactId>
-</dependency>
-
+	<dependency>
+		<groupId>software.amazon.awssdk</groupId>
+		<artifactId>netty-nio-client</artifactId>
+	</dependency>
+	
+	(reactive jackson)
+	quarkus extension add 'rest-client-reactive-jackson'
+	 
+	<dependency>
+      		<groupId>commons-io</groupId>
+      		<artifactId>commons-io</artifactId>
+      		<version>2.15.1</version>
+    	</dependency>
 
 ----------------------------------------------------------------------------------------------
 Para ver o banco no terminal
