@@ -1,7 +1,15 @@
 package domain.repositories;
 
+import java.util.Map;
+
 import domain.models.ProfilePhoto;
 
 public interface ProfilePhotoRepository {
-    void save(String customerId, ProfilePhoto profilePhoto);
+
+    void registerEntity(Map<String, ProfilePhoto> entites);
+
+    void commit();
+
+    void rollback();
+
 }

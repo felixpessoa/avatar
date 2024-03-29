@@ -73,6 +73,30 @@ DOCKER
 			docker images | grep dio
 MVN
 	./mvnw clean package -Pnative
+----------------------------------------------------------------------------------------------
+Add extension
+	(conexão)
+	quarkus extension add 'agroal' 'jdbc-mariadb' 'hibernate-orm'
+	(metricas)
+	quarkus extension add 'quarkus-micrometer' 'micrometer-registry-prometheus'
+	(S3)
+	quarkus extension add 'amazon-s3'
+	add junto no POM
+<dependency>
+	<groupId>software.amazon.awssdk</groupId>
+	<artifactId>netty-nio-client</artifactId>
+</dependency>
 
-		
+
+----------------------------------------------------------------------------------------------
+Para ver o banco no terminal
+(foi usado migração de dados usando o padrão de nomenclatura Flyway)
+	docker exec -it CONTAINER ID mariadb -u quarkus -pquarkus -D quarkus
+----------------------------------------------------------------------------------------------
+Descrições
+	Na class CustomerProfilePhotos foi criado dentro do bloco da class outra class com o tipo private chamada de CompositeKey 
+	e os modificadores como default apenas para exemplificação e boa visualização do projeto (Lembrando ser uma boa pratica ter
+	os modificadores de acessos).
+	
+
 
